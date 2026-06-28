@@ -1,0 +1,113 @@
+:root{
+    --Franklin-Gothic: 'Franklin Gothic Heavy', 'Arial narrow', Arial, sans-serif;
+}
+.titleDiv{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.crumbledPaper{
+    position: absolute;
+    left: 25%;
+    top: 15%;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+}
+.whitePaper{
+    position: absolute;
+    right: 25%;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+}
+.iconsTop{
+    position: absolute;
+    top: 37%;
+    right: 34%;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    list-style-type: none;
+
+}
+.iconsBottom{
+    position: absolute;
+    top: 50%;
+    right: 34%;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    list-style-type: none;
+
+}
+.icon{
+    padding: 0px;
+    display: inline-block;
+    margin: 15px;
+}
+.icon img{
+    width: 80px;
+    height: 80px;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    padding: 0px 0px;
+    filter: drop-shadow(5px 5px 5px #004bbba8)
+}
+.stackTitle{
+    position: absolute;
+    left: 35.3%;
+    top: 20.5%;
+    z-index: 1;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+}
+.stackTitle h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: azure;
+    font-size: 80px;
+    transition: opacity 1s ease-in;
+    opacity: 0; 
+    filter: drop-shadow(5px 5px 5px #003686)
+}
+.whitePaper img,
+.crumbledPaper img{ 
+    width: 640px;
+    height: 360px;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.whitePaper img.show,
+.crumbledPaper img.show,
+.stackTitle h2.show,
+.iconsTop img.show,
+.iconsBottom img.show {
+    opacity: 1;
+}
+.whitePaper img.hide,
+.crumbledPaper img.hide,
+.stackTitle h2.hide,
+.iconsTop img.hide,
+.iconsBottom img.hide {
+    opacity: 0;
+}

@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root{
+    --primary-font-color: #3300FF;
+    --sec-font-color: #ff6600;
+}
+h1{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--primary-font-color);
+}
+ul {
+    position: fixed;
+    top: 48px;
+    right: 5%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 3.5rem; 
+    z-index: 999;
+    opacity: 0;
+    animation: arrive 0.8s ease forwards 2.4s; 
+}
+
+ul li a {
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: var(--primary-font-color);
+    transition: color 0.2s ease-out; 
+}
+ul li a:hover{
+    color: var(--sec-font-color);
+}
+ul li a:visited { 
+ text-decoration: none; 
+}
+
+@keyframes arrive {
+    to { opacity: 1; }
+}
+
+ul li{
+    margin-right: 100px;
+}
+
+
+
+
+/* THE SPACER */
+.spacer {
+    width: 100%;
+    transition: height 1.4s cubic-bezier(0.65, 0, 0.35, 1);
+
+}
+.spacer.hidden, .spacer.fade {
+    height: 100vh;
+}
+.spacer.nav {
+    height: 125px; 
+}
+
+/* THE FLOATING CONTENT */
+.wrapper {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+    user-select: none;
+    /* Animates the position, the gap, and the star's drop simultaneously */
+    transition: 
+        top 1.4s cubic-bezier(0.65, 0, 0.35, 1),
+        left 1.4s cubic-bezier(0.65, 0, 0.35, 1),
+        transform 1.4s cubic-bezier(0.65, 0, 0.35, 1),
+        gap 1.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.wrapper h2 {
+    font-family: var(--Franklin-Gothic);
+    font-weight: 700;
+    margin: 0;
+    text-align: left;
+    line-height: 0.88; /* Keeps the stacked words tightly hugged */
+    color: var(--primary-font-color);
+    transition: font-size 1.4s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.8s ease;
+}
+
+.wrapper img {
+    transition: 
+        width 1.4s cubic-bezier(0.65, 0, 0.35, 1), 
+        height 1.4s cubic-bezier(0.65, 0, 0.35, 1), 
+        transform 1.4s cubic-bezier(0.65, 0, 0.35, 1), /* <-- Added transform */
+        opacity 0.8s ease;
+}
+
+
+/* --- STATE 1 & 2: THE HERO (Centered) --- */
+.hidden, .fade {
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hidden h2, .fade h2 { 
+    font-size: 16vh; 
+}
+
+.hidden img, .fade img { 
+    width: 170px; 
+    height: 170px; 
+    transform: translateY(-35%); /* Floats the star UP next to "Jose" */
+}
+
+.hidden h2, .hidden img { opacity: 0; }
+.fade h2, .fade img { opacity: 1; }
+
+
+/* --- STATE 3: THE LOGO (In Navbar) --- */
+.nav {
+    top: 32px; 
+    left: 5%;  
+    transform: translate(0, 0);
+}
+
+.nav h2, .nav img { opacity: 1; }
+
+.nav h2 { 
+    font-size: 1.55rem; 
+}
+
+.nav img { 
+    width: 26px; 
+    height: 26px; 
+    transform: translateY(0); /* Drops the star flush with the text */
+}

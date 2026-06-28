@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&display=swap');
+:root{
+    font-family: "Inter", sans-serif;
+}
+html {
+    /* Ensures the html tag is at least the height of the document content */
+    min-height: 100%; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* This allows the body to stretch to fit the entire document length */
+    min-height: 100vh; 
+    background-color: #E6E6E6; 
+    background-image: linear-gradient(to bottom left, #E6E6E6, #cccccc);
+    /* This forces the background to repeat/extend if the page is long */
+    background-repeat: no-repeat; 
+    background-attachment: scroll; 
+}
