@@ -22,17 +22,20 @@ export default function Navbar() {
     <header>
       <div className={`${styles.spacer} ${styles[stage]}`} />
       
-      <div className={`${styles.wrapper} ${styles[stage]}`}>
-        <h2>Jose<br/>Ramos</h2>
-        <img src={star} alt="star" draggable="false" />
+      <div className={`${styles.topBar} ${stage === 'nav' ? styles.scrolledNav : ''}`}>
+        <div className={`${styles.wrapper} ${styles[stage]}`}>
+          <h2>Jose<br/>Ramos</h2>
+          <img src={star} alt="star" draggable="false" />
+        </div>
+
+        <nav className={styles.navbar}>
+          <ul>
+            <li><a href="#about">About me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
       </div>
-      <nav className={styles.navbar}>
-        <ul>
-          <li><a href="#about">About me</a></li>
-          <li><a href="#about">Projects</a></li>
-          <li><a href="#projects">Contact</a></li>
-        </ul>
-      </nav>
     </header>
   );
 }

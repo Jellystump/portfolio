@@ -38,6 +38,7 @@ export default function Projects() {
     { 
       id: 'Signmaze', 
       title: 'Signmaze', 
+      description: 'AI-powered web solution designed for sign language translation and interactive learning. Built with React and Node.js, leveraging TensorFlow to achieve visual recognition.',
       images: [signmaze1, signmaze2, signmaze3, signmaze4, signmaze5, signmaze6],
       aspectRatio: '16 / 9',
       width: '550px' 
@@ -45,6 +46,7 @@ export default function Projects() {
     { 
       id: 'FloraId', 
       title: 'FloraId', 
+      description: 'Mobile app for real-time botanical identification and health diagnosis utilizing React Native, Python, and OpenCV. Features automated image processing pipelines powered by TensorFlow to deliver instant plant disease analysis.',
       images: [flora1, flora2, flora3, flora4, flora5, flora6, flora7, flora8, flora9, flora10],
       aspectRatio: '9 / 19',
       width: '280px'
@@ -52,14 +54,15 @@ export default function Projects() {
     { 
       id: 'Selene', 
       title: 'Selene', 
+      description: 'Selene is a high-fidelity, celestial-themed mobile application built using React Native, TypeScript, and Turborepo. Engineered with an offline-first architecture, the app utilizes native location data to run precise local mathematical models—delivering real-time moon phases, illumination percentages, and global astronomical events (eclipses, meteor showers) via a completely customized, interactive SVG calendar interface.',
       images: [flora1, flora2],
-      aspectRatio: '1 / 1',
+      aspectRatio: '9 / 19',
       width: '280px'
     },
   ];
 
   return (
-    <section className={styles['projects-section']}>  
+    <section id='projects' className={styles['projects-section']}>  
       <div className={styles['projects-header']}><h2>Projects</h2></div>
       
       <div className={styles.projectsContainer}>
@@ -76,7 +79,7 @@ export default function Projects() {
               <ImageSlider images={project.images} aspectRatio={project.aspectRatio} width={project.width} />
               <div className={styles.projectInfo}>
                 <h3 className={styles['project-tittle']}>{project.title}</h3>
-                <p>Description for {project.title}</p>
+                <p>{project.description}</p>
               </div>
             </div>
           );

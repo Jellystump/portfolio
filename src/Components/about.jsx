@@ -3,7 +3,7 @@ import styles from './about.module.css'; // Named import for CSS modules
 
 export default function About() {
   return (
-    <section className={styles['about-section']}>
+    <section id='about' className={styles['about-section']}>
       <div className={styles['about-header']}>
         <h2>About me</h2>
       </div>
