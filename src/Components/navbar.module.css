@@ -3,13 +3,8 @@
     --primary-font-color: #3300FF;
     --sec-font-color: #ff6600;
 }
-h1{
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    color: var(--primary-font-color);
-}
-ul {
+/* CHANGE THIS: From global "ul" to scoped ".navbar ul" */
+.navbar ul {
     position: fixed;
     top: 48px;
     right: 5%;
@@ -21,30 +16,31 @@ ul {
     z-index: 999;
     opacity: 0;
     animation: arrive 0.8s ease forwards 2.4s; 
+    
 }
 
-ul li a {
+/* CHANGE THIS: From global "ul li" to scoped ".navbar ul li" */
+.navbar ul li {
+    margin-right: 100px;
+}
+@keyframes arrive {
+    to { opacity: 1; }
+}
+
+/* CHANGE THIS: Scope the link styles too */
+.navbar ul li a {
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     color: var(--primary-font-color);
     transition: color 0.2s ease-out; 
 }
-ul li a:hover{
+.navbar ul li a:hover {
     color: var(--sec-font-color);
 }
-ul li a:visited { 
- text-decoration: none; 
+.navbar ul li a:visited { 
+    text-decoration: none; 
 }
-
-@keyframes arrive {
-    to { opacity: 1; }
-}
-
-ul li{
-    margin-right: 100px;
-}
-
 
 
 

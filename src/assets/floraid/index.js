@@ -1,0 +1,10 @@
+export { default as flora1 } from './flora1.jpeg';
+export { default as flora2 } from './flora2.jpeg';
+export { default as flora3 } from './flora3.jpeg';
+export { default as flora4 } from './flora4.jpeg';
+export { default as flora5 } from './flora5.jpeg';
+export { default as flora6 } from './flora6.jpeg';
+export { default as flora7 } from './flora7.jpeg';
+export { default as flora8 } from './flora8.jpeg';
+export { default as flora9 } from './flora9.jpeg';
+export { default as flora10 } from './flora10.jpeg';

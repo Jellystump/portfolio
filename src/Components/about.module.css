@@ -1,0 +1,139 @@
+/* Base Themes & Reset Vars */
+:root {
+  --bg-main: #112966;
+  --bg-card: #afc1eb;
+  --bg-badge: #1b2744;
+  --text-primary: #202020;
+  --text-secondary: #2b2a2a;
+  --text-muted: #2d2d2e;
+  --accent-green: #34d399;
+  --accent-green-muted: rgba(52, 211, 153, 0.15);
+  --border-color: rgba(68, 68, 68, 0.6);
+}
+
+/* Container Structure */
+.about-section {
+  color: var(--text-secondary);
+  padding: 4rem 1.5rem;
+  max-width: 70rem;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Header styled like a Terminal path */
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  border-b: 1px solid #1e293b;
+  padding-bottom: 1rem;
+}
+
+.about-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.about-icon {
+  color: var(--accent-green);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Text elements */
+.about-pitch {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 3rem;
+}
+
+.about-highlight {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Responsive Grid Layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+}
+
+/* Individual Specification Cards */
+.about-card {
+  background-color: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.card-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-title-wrapper h3 {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Technology Badges */
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-badge {
+  background-color: var(--bg-badge);
+  color: var(--accent-green);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Terminal List Formatting */
+.mono-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.mono-list li {
+  margin-bottom: 0.5rem;
+}
+
+.list-prompt {
+  color: #64748b;
+  margin-right: 0.5rem;
+}

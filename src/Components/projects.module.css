@@ -1,0 +1,178 @@
+
+/* Container Structure */
+.projects-section {
+  color: var(--text-secondary);
+  padding: 4rem 1.5rem;
+  max-width: 70rem;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Header styled like a Terminal path */
+.projects-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  border-b: 1px solid #1e293b;
+  padding-bottom: 1rem;
+}
+
+.projects-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.projects-icon {
+  color: var(--accent-green);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Text elements */
+.projects-pitch {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 3rem;
+}
+
+.projects-highlight {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Responsive Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+}
+
+/* Individual Specification Cards */
+.projects-card {
+  background-color: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.card-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-title-wrapper h3 {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Technology Badges */
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-badge {
+  background-color: var(--bg-badge);
+  color: var(--accent-green);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Terminal List Formatting */
+.mono-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.mono-list li {
+  margin-bottom: 0.5rem;
+}
+
+.list-prompt {
+  color: #64748b;
+  margin-right: 0.5rem;
+}
+
+.projectsContainer {
+  display: flex;
+  flex-direction: column; /* Vertical rows */
+  gap: 2rem;
+}
+
+.projectRow {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Flips the row layout horizontally for middle/odd items */
+.rowReverse {
+  flex-direction: row-reverse;
+}
+
+.sliderContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background-color: var(--bg-card);
+  flex-shrink: 0; /* Prevents the slider from squishing on smaller screens */
+}
+.project-tittle{
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+.sliderContainer img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images fill the container without distorting */
+  transition: opacity 0.5s ease-in-out;
+}
+.projectInfo {
+  flex: 1; /* Forces the text div to claim the remaining empty space */
+  max-width: 80%; /* Prevents text lines from getting too wide to read easily */
+}
+
+.active { opacity: 1; }
+.hidden { opacity: 0; }
