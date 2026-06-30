@@ -50,7 +50,7 @@ export default function Projects() {
       images: [flora1, flora2, flora3, flora4, flora5, flora6, flora7, flora8, flora9, flora10],
       aspectRatio: '9 / 19',
       width: '280px'
-    },
+    },/*
     { 
       id: 'Selene', 
       title: 'Selene', 
@@ -58,7 +58,7 @@ export default function Projects() {
       images: [flora1, flora2],
       aspectRatio: '9 / 19',
       width: '280px'
-    },
+    },*/
   ];
 
   return (
