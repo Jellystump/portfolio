@@ -7,13 +7,16 @@ import Contact from './Components/contact'
 
 
 const App = ()=>  {
+  const containerRef = useRef(null);
 
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
 
-    window.scrollTo(0, 0);
+    if (containerRef.current) {
+      containerRef.current.scrollTop = 0;
+    }
 
     return () => {
       if ('scrollRestoration' in window.history) {
