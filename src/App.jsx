@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Navbar from './Components/navbar'
 import Stack from './Components/stack'
 import Projects from './Components/projects'
