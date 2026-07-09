@@ -7,22 +7,23 @@ import Contact from './Components/contact'
 
 
 const App = ()=>  {
-  const containerRef = useRef(null);
-
   useEffect(() => {
-    if ('scrollRestoration' in window.history) {
+    // Prevent the browser from restoring scroll position
+    if (window.history.scrollRestoration) {
       window.history.scrollRestoration = 'manual';
     }
 
-    if (containerRef.current) {
-      containerRef.current.scrollTop = 0;
-    }
+    // Scroll to top
+    window.scrollTo(0, 0);
 
-    return () => {
-      if ('scrollRestoration' in window.history) {
-        window.history.scrollRestoration = 'auto';
-      }
-    };
+    // Clear the hash
+    if (window.location.hash) {
+      window.history.replaceState(
+        null, 
+        '', 
+        window.location.pathname + window.location.search
+      );
+    }
   }, []);
   
   return (
