@@ -4,28 +4,41 @@
     --sec-font-color: #ff6600;
 }
 /* CHANGE THIS: From global "ul" to scoped ".navbar ul" */
-.navbar ul {
+.navbar {
     position: absolute;
     top: 48px;
     right: 5%;
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Spacing between the link list and the dropdown */
+    z-index: 999;
+    opacity: 0;
+    animation: arrive 0.8s ease forwards 2.4s; 
+}
+
+/* 2. Turn the list into a clean row without absolute positioning */
+.navbar ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
     display: flex;
-    gap: 3.5rem; 
-    z-index: 999;
-    opacity: 0;
-    animation: arrive 0.8s ease forwards 2.4s; 
-    
+    gap: 3.5rem; /* Spacing between individual links */
 }
 
 /* CHANGE THIS: From global "ul li" to scoped ".navbar ul li" */
 .navbar ul li {
-    margin-right: 100px;
+    margin-right: 0; 
 }
+.langSelector {
+    display: flex;
+    align-items: center;
+}
+
+/* Keep your existing .selectInput and animation styles below... */
 @keyframes arrive {
     to { opacity: 1; }
 }
+
 
 /* CHANGE THIS: Scope the link styles too */
 .navbar ul li a {
@@ -159,4 +172,21 @@
 /* Re-enables clicking strictly for the links */
 .topBar nav {
     pointer-events: auto; 
+}
+
+.selectInput {
+    background: transparent;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #724fff  ;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.selectInput option {
+    background: #fff; /* Prevents unreadable text if navbar is dark */
+    color: #8364ff;
 }

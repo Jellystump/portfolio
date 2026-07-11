@@ -1,23 +1,26 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './about.module.css'; // Named import for CSS modules
 
 export default function About() {
+  const { t, i18n } = useTranslation();
+
   return (
     <section id='about' className={styles['about-section']}>
       <div className={styles['about-header']}>
-        <h2>About me</h2>
+        <h2>{t('navbar.about')}</h2>
       </div>
 
       <p className={styles['about-pitch']}>
-        I am a <span className={styles['about-highlight']}>Computer Science Engineer</span> focused on software efficiency, backend optimization, and cross-platform mobile architectures.
+        {t('about.aboutPitch1')} <span className={styles['about-highlight']}>{t('about.aboutPitch2')}</span> {t('about.aboutPitch3')}
       </p>
 
       <div className={styles['about-grid']}>
         <div className={styles['about-card']}>
           <div className={styles['card-title-wrapper']}>
-            <h3>Technical Core</h3>
+            <h3>{t('about.technicalCore')}</h3>
           </div>
-          <p className={styles['card-description']}>Engineered around structured data pipelines, state management, and real-time execution trees.</p>
+          <p className={styles['card-description']}>{t('about.technicalCoreDescription')}</p>
           <div className={styles['badge-container']}>
             <span className={styles['tech-badge']}>Javascript/Typescript</span>
             <span className={styles['tech-badge']}>React</span>
@@ -30,22 +33,22 @@ export default function About() {
 
         <div className={styles['about-card']}>
           <div className={styles['card-title-wrapper']}>
-            <h3>Global Operations</h3>
+            <h3>{t('about.availabilityInfo')}</h3>
           </div>
           <ul className={styles['mono-list']}>
-            <li><span className={styles['list-prompt']}>&gt;</span> Language: English (Fluent, C1) <br/> Spanish (Native)</li>
-            <li><span className={styles['list-prompt']}>&gt;</span> Timezone: GMT-4 (LATAM / US East Align)</li>
-            <li><span className={styles['list-prompt']}>&gt;</span> Availability: Remote / B2B Contractor</li>
+            <li><span className={styles['list-prompt']}>&gt;</span>{t('about.availabilityInfoEnglish')} <br/> {t('about.availabilityInfoSpanish')}</li>
+            <li><span className={styles['list-prompt']}>&gt;</span> {t('about.availabilityInfoTimezone')}</li>
+            <li><span className={styles['list-prompt']}>&gt;</span> {t('about.availabilityInfoAvaibility')}</li>
           </ul>
         </div>
 
         {/* Note the template literal handling for combining scoped class strings */}
         <div className={`${styles['about-card']} ${styles['col-span-2']}`}>
           <div className={styles['card-title-wrapper']}>
-            <h3>Remote Infrastructure SLA</h3>
+            <h3>{t('about.remoteInfrastructureSLA')}</h3>
           </div>
           <p className={styles['card-description']} style={{ color: 'var(--text-muted)', fontSize: '0.875rem', lineHeight: '1.6' }}>
-            Operating with a fully redundant setup to ensure uninterrupted deployment and communication. Powered by a high-speed <span className={styles['about-highlight']}>400 Mbps fiber optics link</span> and dedicated, independent auxiliary power backups providing <span className={styles['about-highlight']}>100% remote uptime</span> during core operational hours.
+            {t('about.remoteInfrastructureSLADesc1')} <span className={styles['about-highlight']}>{t('about.remoteInfrastructureSLADescSpeed')}</span> {t('about.remoteInfrastructureSLADesc2')} <span className={styles['about-highlight']}>{t('about.remoteInfrastructureSLADesc3')}</span> {t('about.remoteInfrastructureSLADesc4')}
           </p>
         </div>
       </div>

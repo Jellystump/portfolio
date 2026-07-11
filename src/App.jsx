@@ -4,7 +4,7 @@ import Stack from './Components/stack'
 import Projects from './Components/projects'
 import About from './Components/about'
 import Contact from './Components/contact'
-
+import './i18n.js';
 
 const App = ()=>  {
   const containerRef = useRef(null);

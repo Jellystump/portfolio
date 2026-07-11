@@ -1,10 +1,26 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './navbar.module.css';
 import star from '../assets/tittlestar.png'
 
 
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    document.dir = lang === "ar" ? "rtl" : "ltr";
+    document.documentElement.lang = lang;
+  };
+
+  const languages = [
+    {code: "en", name: "English", flag: "US"},
+    {code: "es", name: "Español", flag: "ES"},
+    {code: "jp", name: "日本語", flag: "JP"},
+  ];
+
   const [stage, setStage] = useState('hidden');
 
     useEffect(() => {
@@ -30,10 +46,23 @@ export default function Navbar() {
 
         <nav className={styles.navbar}>
           <ul>
-            <li><a href="#about">About me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">{t('navbar.about')}</a></li>
+            <li><a href="#projects">{t('navbar.projects')}</a></li>
+            <li><a href="#contact">{t('navbar.contact')}</a></li>
           </ul>
+          <div className={styles.langSelector}>
+            <select 
+              value={i18n.language} 
+              onChange={(e) => changeLanguage(e.target.value)}
+              className={styles.selectInput}
+            >
+              {languages.map((lang) => (
+                <option key={lang.code} value={lang.code}>
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          </div>
         </nav>
       </div>
     </header>

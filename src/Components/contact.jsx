@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import styles from './contact.module.css'
+import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
     const [result, setResult] = useState("");
+    const { t, i18n } = useTranslation();
 
     const onSubmit = async (event) => {
         event.preventDefault();
@@ -21,15 +23,15 @@ export default function Contact() {
     return(
         <section id='contact' className={styles['contact-section']}>
             <div className={styles['contact-header']}>
-                <h2>Contact me</h2>
+                <h2>{t('navbar.contact')}</h2>
             </div>
 
             <form  onSubmit={onSubmit}>
                 <div className={styles['contact-form']}>
-                    <input className={styles['input-box']} type="text" name="name" placeholder='Name' required/>
-                    <input className={styles['input-box']}type="email" name="email" placeholder='Email' required/>
-                    <textarea className={`${styles['input-box']} ${styles['area']}`}  name="message" placeholder='Message' required></textarea>
-                    <button className={styles['contact-submit']} type="submit">Submit</button>
+                    <input className={styles['input-box']} type="text" name="name" placeholder={t('contact.name')} required/>
+                    <input className={styles['input-box']}type="email" name="email" placeholder={t('contact.email')} required/>
+                    <textarea className={`${styles['input-box']} ${styles['area']}`}  name="message" placeholder={t('contact.message')} required></textarea>
+                    <button className={styles['contact-submit']} type="submit">{t('contact.submit')}</button>
                     <p>{result}</p>
                 </div>
             </form>

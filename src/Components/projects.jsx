@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './projects.module.css';
+import { useTranslation } from 'react-i18next';
 import { flora1, flora2, flora3, flora4, flora5, flora6, flora7, flora8, flora9, flora10 } from '../assets/floraid';
 import { signmaze1, signmaze2, signmaze3, signmaze4, signmaze5, signmaze6} from '../assets/signmaze';
 
@@ -33,12 +34,13 @@ const ImageSlider = ({ images, aspectRatio, width }) => {
 };
 
 export default function Projects() {
+  const { t, i18n } = useTranslation();
   // Added an aspectRatio property to each project object
   const projects = [
     { 
       id: 'Signmaze', 
       title: 'Signmaze', 
-      description: 'AI-powered web solution designed for sign language translation and interactive learning. Built with React and Node.js, leveraging TensorFlow to achieve visual recognition.',
+      description: t('projects.signmazeDesc'),
       images: [signmaze1, signmaze2, signmaze3, signmaze4, signmaze5, signmaze6],
       aspectRatio: '16 / 9',
       width: '550px' 
@@ -46,7 +48,7 @@ export default function Projects() {
     { 
       id: 'FloraId', 
       title: 'FloraId', 
-      description: 'Mobile app for real-time botanical identification and health diagnosis utilizing React Native, Python, and OpenCV. Features automated image processing pipelines powered by TensorFlow to deliver instant plant disease analysis.',
+      description: t('projects.floraIDDesc'),
       images: [flora1, flora2, flora3, flora4, flora5, flora6, flora7, flora8, flora9, flora10],
       aspectRatio: '9 / 19',
       width: '280px'
@@ -63,7 +65,7 @@ export default function Projects() {
 
   return (
     <section id='projects' className={styles['projects-section']}>  
-      <div className={styles['projects-header']}><h2>Projects</h2></div>
+      <div className={styles['projects-header']}><h2>{t('navbar.projects')}</h2></div>
       
       <div className={styles.projectsContainer}>
         {projects.map((project, index) => {
