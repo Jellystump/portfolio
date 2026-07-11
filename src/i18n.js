@@ -46,7 +46,7 @@ i18n.use(initReactI18next).init({
                     technicalCore: "Núcleo técnico",
                     technicalCoreDescription: "Diseñado en torno a flujos de datos estructurados, gestión de estados y árboles de ejecución en tiempo real.",
                     availabilityInfo: "Disponibilidad e información",
-                    availabilityInfoEnglish: "Idioma: inglés (nivel avanzado, C1)",
+                    availabilityInfoEnglish: "Idioma: Inglés (nivel avanzado, C1)",
                     availabilityInfoSpanish: "Español (Nativo)",
                     availabilityInfoTimezone: "Zona horaria: GMT-4 (América Latina / Costa Este de EE. UU.)",
                     availabilityInfoAvaibility: "Disponibilidad: Remoto / Colaborador B2B",
