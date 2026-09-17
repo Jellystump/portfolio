@@ -3,7 +3,7 @@ import styles from './projects.module.css';
 import { useTranslation } from 'react-i18next';
 import { flora1, flora2, flora3, flora4, flora5, flora6, flora7, flora8, flora9, flora10 } from '../assets/floraid';
 import { signmaze1, signmaze2, signmaze3, signmaze4, signmaze5, signmaze6} from '../assets/signmaze';
-import { selene1, selene2, selene3, selene4} from '../assets/selene';
+import { selene1, selene2, selene3, } from '../assets/selene';
 
 const ImageSlider = ({ images, aspectRatio, width }) => {
   const [current, setCurrent] = useState(0);
@@ -56,7 +56,7 @@ export default function Projects() {
       id: 'Selene', 
       title: 'Selene', 
       description: t('projects.seleneDesc'),
-      images: [selene1, selene2, selene3, selene4],
+      images: [selene1, selene2, selene3],
       aspectRatio: '16 / 9',
       width: '550px' 
     },
