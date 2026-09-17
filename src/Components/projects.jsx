@@ -58,7 +58,7 @@ export default function Projects() {
       description: t('projects.seleneDesc'),
       images: [selene1, selene2, selene3, selene4],
       aspectRatio: '16 / 9',
-      width: '280px'
+      width: '550px' 
     },
   ];
 
