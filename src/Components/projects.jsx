@@ -5,7 +5,6 @@ import { flora1, flora2, flora3, flora4, flora5, flora6, flora7, flora8, flora9,
 import { signmaze1, signmaze2, signmaze3, signmaze4, signmaze5, signmaze6} from '../assets/signmaze';
 import { selene1, selene2, selene3, selene4} from '../assets/selene';
 
-// Component for the individual image slider
 const ImageSlider = ({ images, aspectRatio, width }) => {
   const [current, setCurrent] = useState(0);
 
@@ -36,7 +35,6 @@ const ImageSlider = ({ images, aspectRatio, width }) => {
 
 export default function Projects() {
   const { t, i18n } = useTranslation();
-  // Added an aspectRatio property to each project object
   const projects = [
     { 
       id: 'Signmaze', 
@@ -70,7 +68,6 @@ export default function Projects() {
       
       <div className={styles.projectsContainer}>
         {projects.map((project, index) => {
-          // Check if index is odd (1, 3, 5...) to determine the middle/alternating items
           const isReverse = index % 2 !== 0;
 
           return (
