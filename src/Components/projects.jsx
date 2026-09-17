@@ -3,6 +3,7 @@ import styles from './projects.module.css';
 import { useTranslation } from 'react-i18next';
 import { flora1, flora2, flora3, flora4, flora5, flora6, flora7, flora8, flora9, flora10 } from '../assets/floraid';
 import { signmaze1, signmaze2, signmaze3, signmaze4, signmaze5, signmaze6} from '../assets/signmaze';
+import { selene1, selene2, selene3, selene4} from '../assets/selene';
 
 // Component for the individual image slider
 const ImageSlider = ({ images, aspectRatio, width }) => {
@@ -52,15 +53,15 @@ export default function Projects() {
       images: [flora1, flora2, flora3, flora4, flora5, flora6, flora7, flora8, flora9, flora10],
       aspectRatio: '9 / 19',
       width: '280px'
-    },/*
+    },
     { 
       id: 'Selene', 
       title: 'Selene', 
-      description: 'Selene is a high-fidelity, celestial-themed mobile application built using React Native, TypeScript, and Turborepo. Engineered with an offline-first architecture, the app utilizes native location data to run precise local mathematical models—delivering real-time moon phases, illumination percentages, and global astronomical events (eclipses, meteor showers) via a completely customized, interactive SVG calendar interface.',
-      images: [flora1, flora2],
+      description: t('projects.seleneDesc'),
+      images: [selene1, selene2, selene3, selene4],
       aspectRatio: '9 / 19',
       width: '280px'
-    },*/
+    },
   ];
 
   return (

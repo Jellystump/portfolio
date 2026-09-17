@@ -27,6 +27,7 @@ i18n.use(initReactI18next).init({
                 projects:{
                     signmazeDesc: "AI-powered web solution designed for sign language translation and interactive learning. Built with React and Node.js, leveraging TensorFlow to achieve visual recognition.",
                     floraIDDesc: "Mobile app for real-time botanical identification and health diagnosis utilizing React Native, Python, and OpenCV. Features automated image processing pipelines powered by TensorFlow to deliver instant plant disease analysis.",
+                    seleneDesc: "Selene is an interactive, location-aware astronomical dashboard and calendar application. It provides real-time moon phase tracking, visual illumination metrics, and geolocation-based celestial event synchronization directly on an interactive map.",
                 },
                 contact:{
                     name: "Name",
@@ -60,6 +61,7 @@ i18n.use(initReactI18next).init({
                 projects:{
                     signmazeDesc: "Solución web basada en inteligencia artificial diseñada para la traducción de la lengua de signos y el aprendizaje interactivo. Desarrollada con React y Node.js, y que utiliza TensorFlow para llevar a cabo el reconocimiento visual.",
                     floraIDDesc: "Aplicación móvil para la identificación botánica y el diagnóstico fitosanitario en tiempo real, desarrollada con React Native, Python y OpenCV. Incorpora flujos de procesamiento de imágenes automatizados basados en TensorFlow para ofrecer un análisis instantáneo de las enfermedades de las plantas.",
+                    seleneDesc: "Selene es una aplicación interactiva de calendario y panel de control astronómico con función de localización. Ofrece un seguimiento en tiempo real de las fases lunares, métricas visuales de iluminación y sincronización de eventos celestes basada en la geolocalización directamente en un mapa interactivo.",
                 },
                 contact:{
                     name: "Nombre",
@@ -73,32 +75,34 @@ i18n.use(initReactI18next).init({
             translation:{
                 navbar: { about: "プロフィール", projects: "プロジェクト", contact: "お問い合わせ"},
                 about:{ 
-                    aboutPitch1: "I am a",
-                    aboutPitch2: "Computer Science Engineer",
-                    aboutPitch3: "focused on software efficiency, backend optimization, and cross-platform mobile architectures.",
-                    technicalCore: "Technical Core",
-                    technicalCoreDescription: "Engineered around structured data pipelines, state management, and real-time execution trees.",
-                    availabilityInfo: "Availability & Info",
-                    availabilityInfoEnglish: "Language: English (Fluent, C1)",
-                    availabilityInfoSpanish: "Spanish (Native)",
-                    availabilityInfoTimezone: "Timezone: GMT-4 (LATAM / US East Align)",
-                    availabilityInfoAvaibility: "Availability: Remote / B2B Contractor",
-                    remoteInfrastructureSLA: "Remote Infrastructure SLA",
-                    remoteInfrastructureSLADesc1: "Operating with a fully redundant setup to ensure uninterrupted deployment and communication. Powered by a high-speed",
-                    remoteInfrastructureSLADescSpeed: "400 Mbps fiber optics link",
-                    remoteInfrastructureSLADesc2: "and dedicated, independent auxiliary power backups providing",
-                    remoteInfrastructureSLADesc3: "100% remote uptime",
-                    remoteInfrastructureSLADesc4: "during core operational hours.",
+                    aboutPitch1: "私は",
+                    aboutPitch2: "コンピュータサイエンスエンジニア",
+                    aboutPitch3: "ソフトウェアの効率化、バックエンドの最適化、およびクロスプラットフォームのモバイルアーキテクチャを専門としています。",
+                    technicalCore: "技術の中核",
+                    technicalCoreDescription: "構造化されたデータパイプライン、状態管理、およびリアルタイム実行ツリーを中心に設計されています。",
+                    availabilityInfo: "対応状況と情報",
+                    availabilityInfoEnglish: "言語：英語（流暢、C1レベル）",
+                    availabilityInfoSpanish: "スペイン語（母語）",
+                    availabilityInfoTimezone: "タイムゾーン：GMT-4（ラテンアメリカ／米国東部時間）",
+                    availabilityInfoAvaibility: "勤務形態: リモート / B2B契約者",
+                    remoteInfrastructureSLA: "リモートインフラストラクチャSLA",
+                    remoteInfrastructureSLADesc1: "中断のないデプロイと通信を確保するため、完全冗長構成で運用されています。高速な",
+                    remoteInfrastructureSLADescSpeed: "400 Mbpsの光ファイバー回線",
+                    remoteInfrastructureSLADesc2: "および専用かつ独立した非常用電源バックアップにより、",
+                    remoteInfrastructureSLADesc3: "コア稼働時間中は",
+                    remoteInfrastructureSLADesc4: "100%のリモート稼働率を",
+                    remoteInfrastructureSLADesc5: "保証しています。",
                 },
                 projects:{
-                    signmazeDesc: "AI-powered web solution designed for sign language translation and interactive learning. Built with React and Node.js, leveraging TensorFlow to achieve visual recognition.",
-                    floraIDDesc: "Mobile app for real-time botanical identification and health diagnosis utilizing React Native, Python, and OpenCV. Features automated image processing pipelines powered by TensorFlow to deliver instant plant disease analysis.",
+                    signmazeDesc: "手話翻訳とインタラクティブな学習を目的とした、AIを活用したWebソリューション。ReactとNode.jsで構築され、TensorFlowを活用して視覚認識を実現しています。",
+                    floraIDDesc: "React Native、Python、OpenCVを活用した、植物のリアルタイム同定および健康診断を行うモバイルアプリ。TensorFlowによる自動画像処理パイプラインを搭載し、植物の病害分析を即座に提供します。",
+                    seleneDesc: "Seleneは、位置情報を活用したインタラクティブな天文ダッシュボードおよびカレンダーアプリです。インタラクティブな地図上で、月の満ち欠けのリアルタイム追跡、視覚的な照度指標、および位置情報に基づく天体イベントの同期機能を提供します。",
                 },
                 contact:{
-                    name: "Name",
-                    email: "Email",
-                    message: "Message",
-                    submit: "Submit"
+                    name: "名前",
+                    email: "メールアドレス",
+                    message: "メッセージ",
+                    submit: "送信"
                 }
             },
         },
