@@ -47,7 +47,7 @@ i18n.use(initReactI18next).init({
                     technicalCore: "Núcleo técnico",
                     technicalCoreDescription: "Diseñado en torno a flujos de datos estructurados, gestión de estados y árboles de ejecución en tiempo real.",
                     availabilityInfo: "Disponibilidad e información",
-                    availabilityInfoEnglish: "Idioma: inglés (nivel avanzado, C1)",
+                    availabilityInfoEnglish: "Idioma: Inglés (nivel avanzado, C1)",
                     availabilityInfoSpanish: "Español (Nativo)",
                     availabilityInfoTimezone: "Zona horaria: GMT-4 (América Latina / Costa Este de EE. UU.)",
                     availabilityInfoAvaibility: "Disponibilidad: Remoto / Colaborador B2B",
@@ -94,8 +94,8 @@ i18n.use(initReactI18next).init({
                     remoteInfrastructureSLADesc5: "保証しています。",
                 },
                 projects:{
-                    signmazeDesc: "手話翻訳とインタラクティブな学習を目的とした、AIを活用したWebソリューション。ReactとNode.jsで構築され、TensorFlowを活用して視覚認識を実現しています。",
-                    floraIDDesc: "React Native、Python、OpenCVを活用した、植物のリアルタイム同定および健康診断を行うモバイルアプリ。TensorFlowによる自動画像処理パイプラインを搭載し、植物の病害分析を即座に提供します。",
+                    signmazeDesc: "AI-powered web solution designed for sign language translation and interactive learning. Built with React and Node.js, leveraging TensorFlow to achieve visual recognition.",
+                    floraIDDesc: "Mobile app for real-time botanical identification and health diagnosis utilizing React Native, Python, and OpenCV. Features automated image processing pipelines powered by TensorFlow to deliver instant plant disease analysis.",
                     seleneDesc: "Seleneは、位置情報を活用したインタラクティブな天文ダッシュボードおよびカレンダーアプリです。インタラクティブな地図上で、月の満ち欠けのリアルタイム追跡、視覚的な照度指標、および位置情報に基づく天体イベントの同期機能を提供します。",
                 },
                 contact:{
