@@ -1,8 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-:root{
+
+:root {
     --primary-font-color: #3300FF;
     --sec-font-color: #ff6600;
 }
+
+.hamburgerBtn {
+    display: none;
+    position: absolute;
+    top: 24px;
+    right: 5%;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--primary-font-color);
+    cursor: pointer;
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+/* NAVBAR BASE STYLES */
 .navbar {
     position: absolute;
     top: 20px;
@@ -23,12 +40,40 @@
 
 .navbar ul li a {
     font-size: 0.9rem;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: var(--primary-font-color);
+    transition: color 0.2s ease-out;
 }
 
-.navbar ul li {
-    margin-right: 0; 
+.navbar ul li a:hover {
+    color: var(--sec-font-color);
 }
 
+.langSelector {
+    display: flex;
+    align-items: center;
+}
+
+.selectInput {
+    background: transparent;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #724fff;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.selectInput option {
+    background: #fff;
+    color: #8364ff;
+}
+
+/* MOBILE RESPONSIVE DROPDOWN (< 768px) */
 @media (max-width: 767px) {
     .hidden h2, .fade h2 { 
         font-size: 10vh; 
@@ -39,13 +84,44 @@
         height: 90px; 
     }
 
+    .hamburgerBtn {
+        display: block; 
+    }
+
+    .navbar {
+        display: none;
+        position: fixed;
+        top: 80px;
+        right: 5%;
+        left: 5%;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        padding: 1.5rem 1rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        gap: 1.25rem;
+    }
+
+    .navbar.menuOpen {
+        display: flex;
+    }
+
     .navbar ul {
-        gap: 0.75rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+    }
+
+    .navbar ul li a {
+        font-size: 1.1rem;
     }
 }
 
 @media (min-width: 768px) {
     .navbar {
+        display: flex !important;
         top: 48px;
         gap: 2rem;
     }
@@ -58,38 +134,11 @@
         font-size: 1rem;
     }
 }
-.langSelector {
-    display: flex;
-    align-items: center;
-}
-
-@keyframes arrive {
-    to { opacity: 1; }
-}
-
-
-/* CHANGE THIS: Scope the link styles too */
-.navbar ul li a {
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    color: var(--primary-font-color);
-    transition: color 0.2s ease-out; 
-}
-.navbar ul li a:hover {
-    color: var(--sec-font-color);
-}
-.navbar ul li a:visited { 
-    text-decoration: none; 
-}
-
-
 
 /* THE SPACER */
 .spacer {
     width: 100%;
     transition: height 1.4s cubic-bezier(0.65, 0, 0.35, 1);
-
 }
 .spacer.hidden, .spacer.fade {
     height: 100vh;
@@ -105,7 +154,6 @@
     align-items: center;
     z-index: 999;
     user-select: none;
-    /* Animates the position, the gap, and the star's drop simultaneously */
     transition: 
         top 1.4s cubic-bezier(0.65, 0, 0.35, 1),
         left 1.4s cubic-bezier(0.65, 0, 0.35, 1),
@@ -118,7 +166,7 @@
     font-weight: 700;
     margin: 0;
     text-align: left;
-    line-height: 0.88; /* Keeps the stacked words tightly hugged */
+    line-height: 0.88;
     color: var(--primary-font-color);
     transition: font-size 1.4s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.8s ease;
 }
@@ -127,12 +175,11 @@
     transition: 
         width 1.4s cubic-bezier(0.65, 0, 0.35, 1), 
         height 1.4s cubic-bezier(0.65, 0, 0.35, 1), 
-        transform 1.4s cubic-bezier(0.65, 0, 0.35, 1), /* <-- Added transform */
+        transform 1.4s cubic-bezier(0.65, 0, 0.35, 1),
         opacity 0.8s ease;
 }
 
-
-/* --- STATE 1 & 2: THE HERO (Centered) --- */
+/* STATES */
 .hidden, .fade {
     top: 50%; 
     left: 50%;
@@ -146,14 +193,12 @@
 .hidden img, .fade img { 
     width: 170px; 
     height: 170px; 
-    transform: translateY(-35%); /* Floats the star UP next to "Jose" */
+    transform: translateY(-35%);
 }
 
 .hidden h2, .hidden img { opacity: 0; }
 .fade h2, .fade img { opacity: 1; }
 
-
-/* --- STATE 3: THE LOGO (In Navbar) --- */
 .nav {
     top: 32px; 
     left: 5%;  
@@ -169,7 +214,7 @@
 .nav img { 
     width: 26px; 
     height: 26px; 
-    transform: translateY(0); /* Drops the star flush with the text */
+    transform: translateY(0);
 }
 
 .topBar {
@@ -177,18 +222,15 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 110px; /* Adjust this to make the gradient taller/shorter */
-    z-index: 998;  /* Sits right below the text (999) */
-    pointer-events: none; /* Lets users click things underneath the fade */
-    
-    /* Matches your #E6E6E6 body bg -> fades to 0% opacity */
+    height: 110px;
+    z-index: 998;
+    pointer-events: none;
     background: linear-gradient(
         to bottom, 
         rgba(230, 230, 230, 0.95) 40%, 
         rgba(230, 230, 230, 0.7) 80%, 
         rgba(230, 230, 230, 0) 100%
     );
-
     opacity: 0;
     transition: opacity 0.8s ease;
 }
@@ -197,24 +239,6 @@
     opacity: 1;
 }
 
-/* Re-enables clicking strictly for the links */
 .topBar nav {
     pointer-events: auto; 
-}
-
-.selectInput {
-    background: transparent;
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    color: #724fff  ;
-    border: none;
-    padding: 4px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.selectInput option {
-    background: #fff; /* Prevents unreadable text if navbar is dark */
-    color: #8364ff;
 }
