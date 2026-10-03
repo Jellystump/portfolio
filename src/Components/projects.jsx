@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styles from './projects.module.css';
 import { useTranslation } from 'react-i18next';
 import { flora1, flora2, flora3, flora4, flora5, flora6, flora7, flora8, flora9, flora10 } from '../assets/floraid';
-import { signmaze1, signmaze2, signmaze3, signmaze4, signmaze5, signmaze6} from '../assets/signmaze';
-import { selene1, selene2, selene3, } from '../assets/selene';
+import { signmaze1, signmaze2, signmaze3, signmaze4, signmaze5, signmaze6 } from '../assets/signmaze';
+import { selene1, selene2, selene3 } from '../assets/selene';
 
 const ImageSlider = ({ images, aspectRatio, maxWidth }) => {
   const [current, setCurrent] = useState(0);
@@ -33,7 +33,7 @@ const ImageSlider = ({ images, aspectRatio, maxWidth }) => {
 };
 
 export default function Projects() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   
   const projects = [
     { 
@@ -74,7 +74,6 @@ export default function Projects() {
             <div 
               key={project.id} 
               className={`${styles.projectRow} ${isReverse ? styles.rowReverse : ''}`}
-              
             >
               <ImageSlider 
                 images={project.images} 

@@ -191,10 +191,6 @@
     gap: 2rem;
   }
 
-  .rowReverse {
-    flex-direction: row-reverse;
-  }
-
   .projectInfo {
     flex: 1;
     max-width: 80%;
