@@ -5,7 +5,7 @@ import { flora1, flora2, flora3, flora4, flora5, flora6, flora7, flora8, flora9,
 import { signmaze1, signmaze2, signmaze3, signmaze4, signmaze5, signmaze6} from '../assets/signmaze';
 import { selene1, selene2, selene3, } from '../assets/selene';
 
-const ImageSlider = ({ images, aspectRatio, width }) => {
+const ImageSlider = ({ images, aspectRatio, maxWidth }) => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -16,10 +16,9 @@ const ImageSlider = ({ images, aspectRatio, width }) => {
   }, [images.length]);
 
   return (
-    // Apply both dynamic aspect ratio AND dynamic width
     <div 
-    className={styles.sliderContainer} 
-    style={{ aspectRatio: aspectRatio, width: width }}
+      className={styles.sliderContainer} 
+      style={{ aspectRatio: aspectRatio, maxWidth: maxWidth }}
     >
       {images.map((img, idx) => (
         <img 
@@ -35,6 +34,7 @@ const ImageSlider = ({ images, aspectRatio, width }) => {
 
 export default function Projects() {
   const { t, i18n } = useTranslation();
+  
   const projects = [
     { 
       id: 'Signmaze', 
@@ -76,7 +76,11 @@ export default function Projects() {
               className={`${styles.projectRow} ${isReverse ? styles.rowReverse : ''}`}
               
             >
-              <ImageSlider images={project.images} aspectRatio={project.aspectRatio} maxWidth={project.maxWidth} width='100%' />
+              <ImageSlider 
+                images={project.images} 
+                aspectRatio={project.aspectRatio} 
+                maxWidth={project.maxWidth} 
+              />
               <div className={styles.projectInfo}>
                 <h3 className={styles['project-tittle']}>{project.title}</h3>
                 <p>{project.description}</p>
