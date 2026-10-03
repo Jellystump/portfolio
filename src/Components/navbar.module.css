@@ -3,38 +3,66 @@
     --primary-font-color: #3300FF;
     --sec-font-color: #ff6600;
 }
-/* CHANGE THIS: From global "ul" to scoped ".navbar ul" */
 .navbar {
     position: absolute;
-    top: 48px;
+    top: 20px;
     right: 5%;
     display: flex;
     align-items: center;
-    gap: 2rem; /* Spacing between the link list and the dropdown */
+    gap: 1rem;
     z-index: 999;
-    opacity: 0;
-    animation: arrive 0.8s ease forwards 2.4s; 
 }
 
-/* 2. Turn the list into a clean row without absolute positioning */
 .navbar ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
     display: flex;
-    gap: 3.5rem; /* Spacing between individual links */
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
-/* CHANGE THIS: From global "ul li" to scoped ".navbar ul li" */
+.navbar ul li a {
+    font-size: 0.9rem;
+}
+
 .navbar ul li {
     margin-right: 0; 
+}
+
+@media (max-width: 767px) {
+    .hidden h2, .fade h2 { 
+        font-size: 10vh; 
+    }
+    
+    .hidden img, .fade img { 
+        width: 90px; 
+        height: 90px; 
+    }
+
+    .navbar ul {
+        gap: 0.75rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        top: 48px;
+        gap: 2rem;
+    }
+
+    .navbar ul {
+        gap: 3.5rem;
+    }
+
+    .navbar ul li a {
+        font-size: 1rem;
+    }
 }
 .langSelector {
     display: flex;
     align-items: center;
 }
 
-/* Keep your existing .selectInput and animation styles below... */
 @keyframes arrive {
     to { opacity: 1; }
 }

@@ -1,14 +1,22 @@
 :root{
     --Franklin-Gothic: 'Franklin Gothic Heavy', 'Arial narrow', Arial, sans-serif;
 }
-.titleDiv{
+.titleDiv {
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    overflow: hidden;
+}
+.whitePaper img,
+.crumbledPaper img { 
+    width: 100%;
+    max-width: 640px; 
+    height: auto;
+    transition: opacity 1s ease-in-out;
 }
 .crumbledPaper{
     position: absolute;
@@ -67,23 +75,39 @@
     padding: 0px 0px;
     filter: drop-shadow(5px 5px 5px #004bbba8)
 }
-.stackTitle{
-    position: absolute;
-    left: 35.3%;
-    top: 20.5%;
+.stackTitle {
+    position: relative;
     z-index: 1;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none; 
-    -ms-user-select: none;
+    margin-bottom: 1rem;
 }
-.stackTitle h2{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.stackTitle h2 {
+    font-size: 2.5rem; 
     color: azure;
-    font-size: 80px;
-    transition: opacity 1s ease-in;
-    opacity: 0; 
-    filter: drop-shadow(5px 5px 5px #003686)
+    margin: 0;
+}
+
+.iconsTop, .iconsBottom {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 2;
+}
+.icon img {
+    width: 50px; 
+    height: 50px;
+}
+
+
+@media (min-width: 768px) {
+    .stackTitle h2 {
+        font-size: 80px;
+    }
+
+    .icon img {
+        width: 80px;
+        height: 80px;
+    }
 }
 .whitePaper img,
 .crumbledPaper img{ 

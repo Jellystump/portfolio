@@ -134,9 +134,10 @@
 
 .projectRow {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  padding: 1.5rem 1rem;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -170,8 +171,25 @@
   transition: opacity 0.5s ease-in-out;
 }
 .projectInfo {
-  flex: 1; /* Forces the text div to claim the remaining empty space */
-  max-width: 80%; /* Prevents text lines from getting too wide to read easily */
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .projectRow {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .rowReverse {
+    flex-direction: row-reverse;
+  }
+
+  .projectInfo {
+    flex: 1;
+    max-width: 80%;
+  }
 }
 
 .active { opacity: 1; }

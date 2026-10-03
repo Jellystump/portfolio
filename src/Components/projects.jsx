@@ -42,7 +42,7 @@ export default function Projects() {
       description: t('projects.signmazeDesc'),
       images: [signmaze1, signmaze2, signmaze3, signmaze4, signmaze5, signmaze6],
       aspectRatio: '16 / 9',
-      width: '550px' 
+      maxWidth: '550px'
     },
     { 
       id: 'FloraId', 
@@ -50,7 +50,7 @@ export default function Projects() {
       description: t('projects.floraIDDesc'),
       images: [flora1, flora2, flora3, flora4, flora5, flora6, flora7, flora8, flora9, flora10],
       aspectRatio: '9 / 19',
-      width: '280px'
+      maxWidth: '280px'
     },
     { 
       id: 'Selene', 
@@ -58,7 +58,7 @@ export default function Projects() {
       description: t('projects.seleneDesc'),
       images: [selene1, selene2, selene3],
       aspectRatio: '16 / 9',
-      width: '550px' 
+      maxWidth: '550px'
     },
   ];
 
@@ -76,7 +76,7 @@ export default function Projects() {
               className={`${styles.projectRow} ${isReverse ? styles.rowReverse : ''}`}
               
             >
-              <ImageSlider images={project.images} aspectRatio={project.aspectRatio} width={project.width} />
+              <ImageSlider images={project.images} aspectRatio={project.aspectRatio} maxWidth={project.maxWidth} width='100%' />
               <div className={styles.projectInfo}>
                 <h3 className={styles['project-tittle']}>{project.title}</h3>
                 <p>{project.description}</p>

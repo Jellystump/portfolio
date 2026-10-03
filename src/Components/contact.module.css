@@ -61,14 +61,15 @@
     grid-column: span 2 / span 2;
   }
 }
-.contact-form{
-    width: 25vw; 
-    justify-content: center;
+.contact-form {
+    width: 100%;
+    max-width: 400px; 
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    
 }
+
 .input-box{
     padding-top: .5rem;
     padding-bottom: .5rem;
